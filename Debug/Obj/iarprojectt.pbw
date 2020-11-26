@@ -1,0 +1,128 @@
+[
+  {
+    "ID": "c:main.cpp@CpuClock",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "CpuClock",
+    "location": {
+      "column": "25",
+      "line": "7",
+      "path": "C:\\Users\\mircc\\Desktop\\Work05-main\\labtim2\\main.cpp"
+    },
+    "name": "CpuClock",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@delay_ms#I#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "auto delay_ms(int)",
+    "location": {
+      "column": "6",
+      "line": "8",
+      "path": "C:\\Users\\mircc\\Desktop\\Work05-main\\labtim2\\main.cpp"
+    },
+    "name": "delay_ms",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@278@F@delay_ms#I#@timerValue",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "timerValue",
+    "location": {
+      "column": "23",
+      "line": "11",
+      "path": "C:\\Users\\mircc\\Desktop\\Work05-main\\labtim2\\main.cpp"
+    },
+    "name": "timerValue",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@351@F@delay_ms#I#@timerValue",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "timerValue",
+    "location": {
+      "column": "20",
+      "line": "12",
+      "path": "C:\\Users\\mircc\\Desktop\\Work05-main\\labtim2\\main.cpp"
+    },
+    "name": "timerValue",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@main#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "int main(void)",
+    "location": {
+      "column": "5",
+      "line": "23",
+      "path": "C:\\Users\\mircc\\Desktop\\Work05-main\\labtim2\\main.cpp"
+    },
+    "name": "main",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@608@F@main#@ButPeriod",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "ButPeriod",
+    "location": {
+      "column": "16",
+      "line": "25",
+      "path": "C:\\Users\\mircc\\Desktop\\Work05-main\\labtim2\\main.cpp"
+    },
+    "name": "ButPeriod",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@642@F@main#@LedsPeriod",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "LedsPeriod",
+    "location": {
+      "column": "16",
+      "line": "26",
+      "path": "C:\\Users\\mircc\\Desktop\\Work05-main\\labtim2\\main.cpp"
+    },
+    "name": "LedsPeriod",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@677@F@main#@counter",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "counter",
+    "location": {
+      "column": "16",
+      "line": "27",
+      "path": "C:\\Users\\mircc\\Desktop\\Work05-main\\labtim2\\main.cpp"
+    },
+    "name": "counter",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@708@F@main#@flag",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "flag",
+    "location": {
+      "column": "8",
+      "line": "29",
+      "path": "C:\\Users\\mircc\\Desktop\\Work05-main\\labtim2\\main.cpp"
+    },
+    "name": "flag",
+    "origin": "project_file",
+    "scope": null
+  }
+]
