@@ -9,6 +9,7 @@
 #include "rccregisters.hpp"
 #include "gpiocregisters.hpp"
 #include "gpioaregisters.hpp"
+#include "stkregisters.hpp"
 #include "tim2registers.hpp"
 #include <iostream>
 
@@ -16,24 +17,21 @@ constexpr std::uint32_t CpuClock = 8'000'000U;
 auto delay_ms(std::uint32_t ButPeriod)
 {
   TIM2::CR1::URS::OverflowEvent::Set();
-  const std::uint32_t timerValue = (CpuClock * 1000U) * ButPeriod - 1U;
-  TIM2::ARR::Write(timerValue);
+  TIM2::PSC::Set(7999U);
+  TIM2::ARR::Write(ButPeriod - 1U);
   TIM2::SR::UIF::NoInterruptPending::Set();
   TIM2::CNT::Write(0);
   TIM2::CR1::CEN::Enable::Set();
-
-  while(!TIM2::SR::UIF::NoInterruptPending::IsSet())
+  while (!TIM2::SR::UIF::NoInterruptPending::IsSet() )
   {
   }
   TIM2::CR1::CEN::Disable::Set();
 }
-
 int main()
 {
   unsigned int ButPeriod = 100U;
   unsigned int LedsPeriod = 500U;
   unsigned int counter = 0;
-
   bool flag = false;
   RCC::CR::HSEON::On::Set();
   while(!RCC::CR::HSERDY::Ready::IsSet())
@@ -61,29 +59,28 @@ int main()
     }
     counter = counter + ButPeriod;
     if(counter >= LedsPeriod)
-    {
-      if(!flag)
       {
-        GPIOC::BSRR::BS8::High::Write();
-        GPIOC::BSRR::BS9::High::Write();
-        GPIOC::BSRR::BS5::High::Write();
-        GPIOA::BSRR::BS5::High::Write();
-        flag = true;
+        if(!flag)
+        {
+          GPIOC::BSRR::BS8::High::Write();
+          GPIOC::BSRR::BS9::High::Write();
+          GPIOC::BSRR::BS5::High::Write();
+          GPIOA::BSRR::BS5::High::Write();
+          flag = true;
+        }
+        else
+        {
+          GPIOC::BSRR::BR9::Low::Write();
+          GPIOC::BSRR::BR8::Low::Write();
+          GPIOC::BSRR::BR5::Low::Write();
+          GPIOA::BSRR::BR5::Low::Write();
+          flag = false;
+        }
+        counter = 0;
       }
-    else
-    {
-      GPIOC::BSRR::BR9::Low::Write();
-      GPIOC::BSRR::BR8::Low::Write();
-      GPIOC::BSRR::BR5::Low::Write();
-      GPIOA::BSRR::BR5::Low::Write();
-      flag = false;
-    }
-    counter = 0;
-    }
   }
   return 1;
 }
-
 ----
 
 === _Описание действий_
